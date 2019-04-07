@@ -6,28 +6,28 @@ httpget(1);
 var abc=0;
 var AipSpeechClient = require("baidu-aip-sdk").speech;
 
-// ÉèÖÃAPPID/AK/SK
-var APP_ID = "15893837";
-var API_KEY = "2Hea7P5pYpzsUTiK3536QLDe";
-var SECRET_KEY = "NujLUhutlFtPSxySU0IxvXQw5evB8luK";
+// è®¾ç½®APPID/AK/SK
+var APP_ID = "";
+var API_KEY = "";
+var SECRET_KEY = "";
 
-// ĞÂ½¨Ò»¸ö¶ÔÏó£¬½¨ÒéÖ»±£´æÒ»¸ö¶ÔÏóµ÷ÓÃ·şÎñ½Ó¿Ú
+// æ–°å»ºä¸€ä¸ªå¯¹è±¡ï¼Œå»ºè®®åªä¿å­˜ä¸€ä¸ªå¯¹è±¡è°ƒç”¨æœåŠ¡æ¥å£
 var client = new AipSpeechClient(APP_ID, API_KEY, SECRET_KEY);
 function langdu(yuying){
-	// ÓïÒôºÏ³É
+	// è¯­éŸ³åˆæˆ
 	var fs = require('fs');
-	// ÓïÒôºÏ³É, ¸½´ø¿ÉÑ¡²ÎÊı
+	// è¯­éŸ³åˆæˆ, é™„å¸¦å¯é€‰å‚æ•°
 	client.text2audio(yuying, {vol: 3 , per: 4}).then(function(result) {
 		if (result.data) {
 			fs.writeFileSync('tmp/'+abc+'.mp3', result.data);
 			bofang(abc);
 			abc++;
 		} else {
-		 // ·şÎñ·¢Éú´íÎó
+		 // æœåŠ¡å‘ç”Ÿé”™è¯¯
 		console.log(result)
 		}
 	}, function(e) {
-		// ·¢ÉúÍøÂç´íÎó
+		// å‘ç”Ÿç½‘ç»œé”™è¯¯
 	 	console.log(e)
 	});
 }
