@@ -15,4 +15,4 @@ git clone https://github.com/guation/XiguaDanmuHelper-Console.git
 
 Running
 
-node main.txt
+node main.js
